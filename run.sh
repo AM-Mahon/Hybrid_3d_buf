@@ -105,8 +105,8 @@ mkdir "$DATA_FOLDER" || { echo "There was a problem making the folder for this r
 # Copy required files into the new data folder
 cp hybrid "$DATA_FOLDER/hybrid" || { echo "Error while copying executable"; exit 5; }
 cp inputs.dat "$DATA_FOLDER/inputs.dat" || { echo "Error while copying inputs.dat"; exit 6; }
-cp fileShrinker.py "$DATA_FOLDER/fileShrinker.py" || { echo "Error while copying fileShrinker.py"; exit 7; }
-cp restart.sh "$DATA_FOLDER/restart.sh" || { echo "Error while copying restart.sh"; exit 7; }
+# cp fileShrinker.py "$DATA_FOLDER/fileShrinker.py" || { echo "Error while copying fileShrinker.py"; exit 7; }
+# cp restart.sh "$DATA_FOLDER/restart.sh" || { echo "Error while copying restart.sh"; exit 7; }
 
 echo "$COMMAND_LINE" > "$DATA_FOLDER/invocation"
 echo "$MPI" > "$DATA_FOLDER/mpipath"
@@ -122,6 +122,6 @@ fi
 
 # Finally, run the program from the data folder
 cd "$DATA_FOLDER"
-"${MPI}mpirun" -n "$NUM_PROC" "$DATA_FOLDER/hybrid" > "$DATA_FOLDER/output" 2> "$DATA_FOLDER/error" &
+"${MPI}mpirun" -n "$NUM_PROC" "$DATA_FOLDER/hybrid" > "$DATA_FOLDER/output" 2> "$DATA_FOLDER/error" 
 
 echo "Done"
