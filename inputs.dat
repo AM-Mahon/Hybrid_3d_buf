@@ -14,7 +14,7 @@
 10                     !grid data output interval
 101                    !particle data output interval
 0                  !data output wait steps
-403                   !flow speed (km/s) 
+300                   !flow speed (km/s) 
 11.2                  !thermal speed for Maxwellian (km/s) (Most probable speed vth = sqrt(2kT/m))
 0.08                   !Ni_tot initial (fraction of Ni_max)
 0.5                   !grid size as fraction of lambda_i
