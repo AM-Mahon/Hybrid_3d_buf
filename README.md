@@ -1,5 +1,8 @@
 # Hybrid space plasma simulator
 
+## Attribution
+This repository was forked from [pdelamere/Hybrid_3d_buf](https://github.com/pdelamere/Hybrid_3d_buf)
+
 ## Compiling
 First build and install OpenMPI. We're using version 1.4. You might be able to ge more recent versions to work, but I've had problems with 1.8.
 
@@ -22,4 +25,4 @@ Gutsf.f is the guts of the program for the fluid simulation.
 Comments in maind.f explain many of the variable names.
 
 ## Contact
-Project lead: Peter.Delamere@gi.alaska.edu
+Developer: AnnMarie.Mahon@lasp.colorado.edu
