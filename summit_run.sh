@@ -16,4 +16,4 @@ module purge
 module load intel/17.4
 module load impi/17.3
 
-./run.sh -d /scratch/summit/jama3001/pd/data -i $SLURM_NTASKS
+./run.sh -d /scratch/summit/jama3001/am/data -i $SLURM_NTASKS
