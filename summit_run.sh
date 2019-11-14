@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --nodes=1
-#SBATCH --time=15:00:00
+#SBATCH --time=00:45:00
 #SBATCH --qos=normal
 #SBATCH --partition=shas
 #SBATCH --ntasks=15
