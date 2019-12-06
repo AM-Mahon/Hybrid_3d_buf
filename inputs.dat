@@ -1,7 +1,7 @@
 0.1e-8               !magnetic field (Tesla)
-1                    !atomic mass for reference species
+16                    !atomic mass for reference species
 16                    !mass of pickup ion species
-2.5e15               !sw thermal H density (km^-3)
+4.0e16              !sw thermal H density (km^-3)
 9.5e13               !sw thermal He density (km^-3)
 4.7e13               !sw shell H density (km^-3)
 4.7e10               !sw shell He density (km^-3)
