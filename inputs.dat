@@ -1,4 +1,4 @@
-0.1e-8               !magnetic field (Tesla)
+0.1e-7               !magnetic field (Tesla)
 16                    !atomic mass for reference species
 16                    !mass of pickup ion species
 4.0e16              !sw thermal H density (km^-3)
@@ -9,8 +9,8 @@
 10                     !sw thermal He ppc
 50                    !sw shell H ppc
 100                    !sw shell He ppc
-0.0016                  !particle time step (fraction of omega_i)
-51                  !number of time steps
+0.016                  !particle time step (fraction of omega_i)
+101                  !number of time steps
 10                     !grid data output interval
 2000                    !particle data output interval
 0                  !data output wait steps
@@ -21,7 +21,7 @@
 0.1875 		      !nu_init_frac, fraction of gyrofrequency for nu_init
 './data/'             !output directory 
 5000                !mrestart
-27                  !pluto_offset
+0                  !pluto_offset
 0.0               !pluto surface field (Tesla)
 90                 !IMF theta
 90                  !IMF phi
