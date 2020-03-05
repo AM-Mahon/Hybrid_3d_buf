@@ -131,7 +131,7 @@ c      character filenum
 
 c----------------------------------------------------------------------
 
-      call my_rank)
+      call readInputs(my_rank)
       write(*,*) 'initializing variables...'
       call initparameters()
 
