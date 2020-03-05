@@ -159,71 +159,75 @@ c solar wind composition
       CONTAINS
 
 c----------------------------------------------------------------
-      subroutine readInputs()
+      subroutine readInputs(my_rank)
 c----------------------------------------------------------------
+      integer :: my_rank
       open(unit=100, file='inputs.dat', status='old')
       
       read(100,*) b0_init
-      write(*,*) 'b0_init...........',b0_init
       read(100,*) ion_amu
-      write(*,*) 'amu...............',ion_amu
       read(100,*) m_pu
-      write(*,*) 'mpu...............',m_pu
       mpu = m_pu ! mpu is depreciated
       read(100,*) n_H_therm_init
-      write(*,*) 'Thermal H density...........',n_H_therm_init
       read(100,*) n_He_therm_init
-      write(*,*) 'Thermal He density...........',n_He_therm_init
       read(100,*) n_H_shell_init
-      write(*,*) 'Shell H density...........',n_H_shell_init
       read(100,*) n_He_shell_init
-      write(*,*) 'Shell He density...........',n_He_shell_init
       ! The total initial density needs to be calculated
       nf_init = n_H_therm_init + n_He_therm_init + n_H_shell_init
       read(100,*) therm_H_ppc
-      write(*,*) 'Thermal H ppc...........',therm_H_ppc
       read(100,*) therm_He_ppc
-      write(*,*) 'Thermal He ppc...........',therm_He_ppc
       read(100,*) shell_H_ppc
-      write(*,*) 'Shell H ppc...........',shell_H_ppc
-      read(100,*) shell_He_ppc
-      write(*,*) 'Shell He ppc...........',shell_He_ppc
+      read(100,*) shell_He_pp
 
-      write(*,*) 'nf_init...........',nf_init
       read(100,*) dt_frac
-      write(*,*) 'dt_frac...........',dt_frac
       read(100,*) nt
-      write(*,*) 'nt................',nt
       read(100,*) nout
-      write(*,*) 'nout..............',nout
       read(100,*) part_nout
-      write(*,*) 'part_nout..............',part_nout
       read(100,*) output_wait
-      write(*,*) 'output_wait..............',output_wait
       read(100,*) vsw
-      write(*,*) 'vsw...............',vsw
       read(100,*) vth
-      write(*,*) 'vth...............',vth
 c      read(100,*) Ni_max
-c      write(*,*) 'Ni_max....',Ni_max
       read(100,*) Ni_tot_frac
-      write(*,*) 'Ni_tot_frac.......',Ni_tot_frac
       read(100,*) dx_frac
-      write(*,*) 'dx_frac...........',dx_frac
       read(100,*) nu_init_frac
-      write(*,*) 'nu_init_frac......',nu_init_frac
       read(100,*) out_dir
-      write(*,*) 'output dir........',out_dir
       read(100,*) mrestart
-      write(*,*) 'mrestart...........',mrestart
       read(100,*) ri0
-      write(*,*) 'pluto offset.......',ri0
       read(100,*) surf_field
-      write(*,*) 'surface field of pluto.......',surf_field
       read(100,*) imf_theta
       read(100,*) imf_phi
-      write(*,*) 'IMF direction.......',imf_theta, imf_phi
+      
      
+      if (my_rank .eq. 0) then
+      write(*,*) 'b0_init...........',b0_init
+      write(*,*) 'amu...............',ion_amu
+      write(*,*) 'mpu...............',m_pu
+      write(*,*) 'Thermal H density...........',n_H_therm_init
+      write(*,*) 'Thermal He density...........',n_He_therm_init
+      write(*,*) 'Shell H density...........',n_H_shell_init
+      write(*,*) 'Shell He density...........',n_He_shell_init
+      write(*,*) 'Thermal H ppc...........',therm_H_ppc
+      write(*,*) 'Thermal He ppc...........',therm_He_ppc
+      write(*,*) 'Shell H ppc...........',shell_H_ppc
+      write(*,*) 'Shell He ppc...........',shell_He_ppc
+      write(*,*) 'dt_frac...........',dt_frac
+      write(*,*) 'nt................',nt
+      write(*,*) 'nout..............',nout
+      write(*,*) 'part_nout..............',part_nout
+      write(*,*) 'output_wait..............',output_wait
+      write(*,*) 'vsw...............',vsw
+      write(*,*) 'vth...............',vth
+c      write(*,*) 'Ni_max....',Ni_max
+      write(*,*) 'Ni_tot_frac.......',Ni_tot_frac
+      write(*,*) 'dx_frac...........',dx_frac
+      write(*,*) 'nu_init_frac......',nu_init_frac
+      write(*,*) 'output dir........',out_dir
+      write(*,*) 'mrestart...........',mrestart
+      write(*,*) 'pluto offset.......',ri0
+      write(*,*) 'surface field of pluto.......',surf_field
+      write(*,*) 'IMF direction.......',imf_theta, imf_phi
+      endif
+
       close(100)
       end subroutine readInputs
 c----------------------------------------------------------------
