@@ -226,6 +226,8 @@ c      write(*,*) 'Ni_max....',Ni_max
       write(*,*) 'pluto offset.......',ri0
       write(*,*) 'surface field of pluto.......',surf_field
       write(*,*) 'IMF direction.......',imf_theta, imf_phi
+
+      write(*,*) 'nx, ny, nx........',nx, ny, nz
       endif
 
       close(100)
